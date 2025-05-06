@@ -14,7 +14,9 @@ public class RedSummer extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(RedSummer.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+//        FXMLLoader fxmlLoader = new FXMLLoader(RedSummer.class.getResource("event-view.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setScene(scene);
         stage.setTitle(MAIN_VIEW_TITLE);
         stage.show();
