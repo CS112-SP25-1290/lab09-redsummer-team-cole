@@ -16,5 +16,35 @@ import java.io.IOException;
 import static cs112.lab09.Constants.*;
 
 public class MainController {
+    @FXML
+    Label titleLabel;
 
+    @FXML
+    Label subtitleLabel;
+
+    @FXML
+    Label descriptionLabel;
+
+    @FXML
+    ImageView imageView;
+    public void handleStartButton() throws IOException{
+        Stage stage = (Stage)titleLabel.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(RedSummer.class.getResource(MAP_VIEW_RESOURCE));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.setTitle(MAIN_VIEW_TITLE);
+        stage.show();
+    }
+
+    public void handleExitButton() {
+        System.exit(0);
+
+    }
+
+    public void initialize() {
+        titleLabel.setText(MAIN_TITLE);
+        subtitleLabel.setText(MAIN_SUBTITLE);
+        descriptionLabel.setText(MAIN_DESCRIPTION);
+        imageView.setImage(new Image(REDSUMMER_IMAGE_PATH));
+    }
 }
