@@ -21,6 +21,9 @@ public class MapController {
     @FXML
     ImageView imageView;
 
+    @FXML
+    Button SFButton, BBButton;
+
     public void handleSFButton() throws IOException {
         handleShowModal(Constants.Event.SAN_FRANCISCO);
     }
@@ -37,14 +40,16 @@ public class MapController {
         stage.setScene(scene);
         stage.setTitle(CITY_VIEW_TITLE);
 
+        System.out.println("In handle");
         CityController cityController = fxmlLoader.getController();
         cityController.initData(eventIndex);
 
         stage.show();
     }
 
-    public void initialize() {
-        Image image = new Image(REDSUMMER_IMAGE_PATH);
-        imageView.setImage(image);
-    }
+//    public void initialize() {
+//        System.out.println("In initialize");
+//        Image image = new Image("/resources/images/Red-Summer.jpg");
+//        imageView.setImage(image);
+//    }
 }

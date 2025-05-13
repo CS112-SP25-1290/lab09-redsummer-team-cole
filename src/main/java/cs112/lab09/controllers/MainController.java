@@ -29,8 +29,11 @@ public class MainController {
     ImageView imageView;
     public void handleStartButton() throws IOException{
         Stage stage = (Stage)titleLabel.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(RedSummer.class.getResource(MAP_VIEW_RESOURCE));
+        System.out.println("Here");
+        FXMLLoader fxmlLoader = new FXMLLoader(RedSummer.class.getResource("/cs112/lab09/map-view.fxml"));
+        System.out.println("Here");
         Scene scene = new Scene(fxmlLoader.load());
+        System.out.println("Here");
         stage.setScene(scene);
         stage.setTitle(MAIN_VIEW_TITLE);
         stage.show();

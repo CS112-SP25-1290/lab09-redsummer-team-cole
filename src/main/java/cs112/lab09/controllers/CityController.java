@@ -31,12 +31,19 @@ public class CityController {
     Hyperlink hyperlinkReference;
 
     public void handleCloseButton() {
-
+        Stage stage = (Stage)imageView.getScene().getWindow();
+        stage.close();
     }
 
     public void initData(Constants.Event eventIndex) {
         String[] data = Constants.HISTORICAL_DATA[eventIndex.ordinal()];
         RevisedHistoricalEvent event = new RevisedHistoricalEvent(data);
+        imageView.setImage(event.getImage());
+        locationLabel.setText(event.getLocation());
+        dateLabel.setText(event.getEventDay().toString());
+        descriptionLabel.setText(event.getDescription());
+        revisedDescriptionLabel.setText(event.getRevisedDescription());
+        hyperlinkReference.setText(event.getCitation());
 
     }
 }
